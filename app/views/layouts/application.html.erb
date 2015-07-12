@@ -8,24 +8,6 @@
 </head>
 <body>
 
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "Host Me", '#', id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> | </li>
-          <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
-        <% else %>
-          <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> | </li>
-          <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> </li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
-
 <% if notice %>
   <p class="alert alert-success"><%= notice %></p>
 <% end %>
@@ -33,7 +15,11 @@
   <p class="alert alert-danger"><%= alert %></p>
 <% end %>
 
-<%= yield %>
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </div>
 
 </body>
 </html>
