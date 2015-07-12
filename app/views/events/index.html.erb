@@ -1,6 +1,6 @@
 <% @events.each do |event| %>
   
-  <p> Username: <%= event.name %></p>
+  <%=link_to(event.name, event) %>
   <p> Description: <%= event.details %></p>
 
 <% end %>

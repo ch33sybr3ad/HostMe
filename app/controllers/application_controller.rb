@@ -5,4 +5,10 @@ class ApplicationController < ActionController::Base
 
   ## redirects to login page if user is not logged in
   # before_action :authenticate_user!
+  before_action :find_user
+
+  private
+    def find_user
+      @user = current_user
+    end
 end
