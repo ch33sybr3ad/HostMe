@@ -11,9 +11,8 @@ Event.delete_all
 
 5.times do 
   User.create(
-    name: Faker::Name.name, 
     email: Faker::Internet.email,
-    password: "123456"
+    password: "12345678"
     )
 
   Event.create(
