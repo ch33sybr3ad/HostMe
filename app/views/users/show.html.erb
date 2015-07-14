@@ -1,2 +1,22 @@
-Welcome to your show page <%= @user.email %>
-<%= image_tag current_user.gravatar_url %>
+<div class="col-md-4">
+  <div class="panel panel-default">
+    <div class="panel-body">
+    <%= image_tag current_user.gravatar_url %>
+    <p>Welcome <%= @user.email %></p>
+    </div>
+  </div>
+</div>
+
+<div class="col-md-8">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h1> List of Events </h1>
+      <% @events.each do |event| %>
+
+        <%= event.name %> <br>
+        <%= event.details %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
