@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'pages/index'
-  resources :events, only: [:index, :show]
+  resources :events, only: [:index, :show, :create, :new]
   resources :users, only: [:index, :show]
 
   # The priority is based upon order of creation: first created -> highest priority.
