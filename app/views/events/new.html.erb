@@ -1,38 +1,11 @@
-<form class="form-horizontal">
-<fieldset>
+<%= bootstrap_form_for(@event) do |f| %>
 
-<!-- Form Name -->
-<legend>Create Event</legend>
+  <%= f.text_field :name %>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Name">Name</label>  
-  <div class="col-md-4">
-  <input id="Name" name="Name" type="text" placeholder="name" class="form-control input-md">
-    
-  </div>
-</div>
+  <%= f.date_field :date %>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Details">Details</label>  
-  <div class="col-md-4">
-  <input id="Details" name="Details" type="text" placeholder="event details" class="form-control input-md">
-    
-  </div>
-</div>
+  <%= f.text_field :details %>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="Date">Date</label>  
-  <div class="col-md-4">
-  <input id="Date" name="Date" type="date" placeholder="date of event" class="form-control input-md">
-    
-  </div>
-</div>
+  <%= f.submit "Create Event" %>
 
-<div class="col-md-4 col-md-offset-4">
-  <button type="submit" class="btn btn-default">Submit</button>
-</div>
-
-</fieldset>
-</form>
+<% end %>
