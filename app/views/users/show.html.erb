@@ -13,12 +13,14 @@
       <h1> List of Events </h1>
       <% @events.each do |event| %>
 
+      <%= link_to event_path(event) do %>
         <div class="panel panel-default">
           <div class="panel-body">
             <p>Event Name: <%= event.name %></p>
             <p>Event Details: <%= event.details %></p>
           </div>
         </div>
+      <% end %>
 
       <% end %>
       <%= link_to "Create Event", new_event_path, class: "btn btn-default" %>
