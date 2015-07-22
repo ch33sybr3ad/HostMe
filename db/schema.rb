@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20150722163417) do
 
   create_table "guestlists", force: :cascade do |t|
     t.integer  "guest_id"
-    t.integer  "attending_event_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
